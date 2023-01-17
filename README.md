@@ -8,22 +8,22 @@ It exposes two functions:
 
 Both functions also take a `score_threshold` parameter. If the confidence of the language classifier is below this score, the functions throws a ValueError. This can be used to weed out noisy texts.
 
-# Credits
+## Credits
 
-This package builds on top of spacy and fasttext. I didn't really do a lot work.
+This package builds on top of [spacy](spacy.io) and [fasttext](https://fasttext.cc/docs/en/language-identification.html). I didn't really do a lot work.
 
-# Improvements
+## Improvements
 
 * The current implementation assumes that a text consists of a single language. This is obviously false. We could try a window approach to find windows in which languages differ, but this requires some experimentation.
 
-# Author
+## Author
 
 Stéphan Tulkens
 
-# License
+## License
 
 MIT
 
-# Version
+## Version
 
 0.1.0
