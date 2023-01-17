@@ -1,3 +1,4 @@
+share/*
 bin/*
 pyvenv.cfg
 # Byte-compiled / optimized / DLL files
