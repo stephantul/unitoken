@@ -6,4 +6,24 @@ It exposes two functions:
 * `tokenize(str)`: tokenizes your text into words.
 * `sent_tokenize(str)`: tokenizes your text into sentences, which are again split into words.
 
+Both functions also take a `score_threshold` parameter. If the confidence of the language classifier is below this score, the functions throws a ValueError. This can be used to weed out noisy texts.
 
+# Credits
+
+This package builds on top of spacy and fasttext. I didn't really do a lot work.
+
+# Improvements
+
+* The current implementation assumes that a text consists of a single language. This is obviously false. We could try a window approach to find windows in which languages differ, but this requires some experimentation.
+
+# Author
+
+Stéphan Tulkens
+
+# License
+
+MIT
+
+# Version
+
+0.1.0
