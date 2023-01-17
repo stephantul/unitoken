@@ -28,7 +28,9 @@ def sent_tokenize(text: str, score_threshold: float = 0.9) -> List[List[str]]:
     if score < score_threshold:
         raise ValueError(f"The score, {score}, was below threshold {score_threshold}")
     if language not in ALLOWED_LANGUAGES:
-        raise ValueError(f"The detected language, {language}, was not in the set of languages.")
+        raise ValueError(
+            f"The detected language, {language}, was not in the set of languages."
+        )
 
     blanky = get_blank(language)
     doc = blanky(text)
