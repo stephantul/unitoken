@@ -1,8 +1,7 @@
-spacy >= 3.0.0
+spacy>=3.0.0
 sudachipy>=0.5.2,!=0.6.1
 sudachidict_core>=20211220
 natto-py>=0.9.0
 pythainlp>=2.0
 pyvi>=0.1.1
 fasttext-langdetect>=1.0.0
-pre-commit>=2.21.0
