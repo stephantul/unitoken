@@ -1,3 +1,3 @@
-from unitoken.unitoken import tokenize, sent_tokenize
+from unitoken.unitoken import sent_tokenize, tokenize
 
 __all__ = ["tokenize", "sent_tokenize"]

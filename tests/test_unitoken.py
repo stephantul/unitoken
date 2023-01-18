@@ -8,7 +8,7 @@ class TestUnitoken(unittest.TestCase):
         with self.assertRaises(ValueError):
             sent_tokenize(empty)
 
-        result = sent_tokenize(empty, score_threshold=0.0)
+        result, _ = sent_tokenize(empty, score_threshold=0.0)
         self.assertEqual(result, [])
 
     def test_tokenize(self) -> None:
@@ -17,12 +17,12 @@ class TestUnitoken(unittest.TestCase):
         with self.assertRaises(ValueError):
             tokenize(my_string)
 
-        result = tokenize(my_string, score_threshold=0.0)
+        result, _ = tokenize(my_string, score_threshold=0.0)
         self.assertEqual(result, my_string.split())
 
     def test_roundtrip(self) -> None:
         my_string = "the dog walked home, and ate nice cookies down by the bay."
 
-        tokenize_result = tokenize(my_string)
-        sent_tokenize_result = sent_tokenize(my_string)
+        tokenize_result, _ = tokenize(my_string)
+        sent_tokenize_result, _ = sent_tokenize(my_string)
         self.assertEqual(sum(sent_tokenize_result, []), tokenize_result)
