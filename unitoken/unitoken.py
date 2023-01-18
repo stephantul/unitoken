@@ -96,7 +96,7 @@ def sent_tokenize(
     predefined_models = _get_predefined_models(models, True)
     doc, language_result = _base_tokenize(text, score_threshold, predefined_models)
 
-    return [[token.text for token in sent] for sent in doc.sents], language_result
+    return _unpack_doc_sentence(doc), language_result
 
 
 def tokenize(
@@ -107,7 +107,7 @@ def tokenize(
     predefined_models = _get_predefined_models(models, False)
     doc, language_result = _base_tokenize(text, score_threshold, predefined_models)
 
-    return [token.text for token in doc], language_result
+    return _unpack_doc(doc), language_result
 
 
 def _base_tokenize_batch(
