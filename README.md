@@ -6,9 +6,9 @@ It exposes two functions:
 * `tokenize(str)`: tokenizes your text into words.
 * `sent_tokenize(str)`: tokenizes your text into sentences, which are again split into words.
 
-Both functions also take a `score_threshold` parameter. If the confidence of the language classifier is below this score, the functions throws a ValueError. This can be used to weed out noisy texts.
-
 The functions also take a dictionary mapping from languages to spacy models. This is handy if you'd like to use models you defined yourself.
+
+The return of the models is a tuple: the first item is the tokens in the text, while the second item is a LanguageResult, indicating the language, the confidence, and whether the language was valid in the current context. If the language is invalid, i.e., `valid == False`, then the return list of tokens will be empty.
 
 ## Example
 
@@ -58,4 +58,4 @@ MIT
 
 ## Version
 
-0.1.0
+0.2.0

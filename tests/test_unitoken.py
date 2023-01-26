@@ -5,19 +5,14 @@ from unitoken import tokenize, sent_tokenize
 class TestUnitoken(unittest.TestCase):
     def test_tokenize_empty(self) -> None:
         empty = ""
-        with self.assertRaises(ValueError):
-            sent_tokenize(empty)
 
-        result, _ = sent_tokenize(empty, score_threshold=0.0)
+        result, _ = sent_tokenize(empty)
         self.assertEqual(result, [])
 
     def test_tokenize(self) -> None:
         my_string = "de de de de de de"
 
-        with self.assertRaises(ValueError):
-            tokenize(my_string)
-
-        result, _ = tokenize(my_string, score_threshold=0.0)
+        result, _ = tokenize(my_string)
         self.assertEqual(result, my_string.split())
 
     def test_roundtrip(self) -> None:
