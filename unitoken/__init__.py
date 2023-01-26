@@ -1,7 +1,7 @@
 from unitoken.unitoken import (
     sent_tokenize,
-    tokenize,
     sent_tokenize_batch,
+    tokenize,
     tokenize_batch,
 )
 

@@ -1,5 +1,6 @@
 import unittest
-from unitoken import tokenize, sent_tokenize
+
+from unitoken import sent_tokenize, tokenize
 
 
 class TestUnitoken(unittest.TestCase):
