@@ -40,6 +40,20 @@ for sentence in my_sentences:
     tokenized.append(tokenize(sentence, models=predefined_models))
 ```
 
+## Installation
+
+It can be installed by cloning through `setup.py`:
+
+```
+python3 setup.py install
+```
+
+ or by using `git`:
+
+```
+pip install git+https://github.com/stephantul/unitoken.git
+```
+
 ## Credits
 
 This package builds on top of [spacy](spacy.io) and [fasttext](https://fasttext.cc/docs/en/language-identification.html). I didn't really do a lot work.
