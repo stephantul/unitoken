@@ -1,4 +1,5 @@
 import logging
+import re
 from collections import defaultdict
 from dataclasses import dataclass
 from functools import lru_cache
@@ -12,6 +13,9 @@ from spacy.tokens import Doc
 from unitoken.constants import SPACY_LANGUAGES
 
 logger = logging.getLogger("unitoken")
+
+
+NEWLINE = re.compile(r"\n")
 
 
 @dataclass
@@ -43,9 +47,13 @@ def _get_blank(language: str) -> Language:
     return nlp
 
 
+def _replace_newlines(string: str) -> str:
+    return NEWLINE.sub(" ", string)
+
+
 def _detect_language(text: str) -> LanguageResult:
     """Detects the language of a piece of text"""
-    result = detect(text)
+    result = detect(_replace_newlines(text))
     return LanguageResult(result["score"], result["lang"])
 
 
